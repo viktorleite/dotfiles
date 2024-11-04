@@ -1,0 +1,40 @@
+[user]
+    name = Viktor Leite
+    email = vitorlesantos@outlook.com
+    # signingkey = 
+
+[core]
+    editor = nano
+    autocrlf = input
+
+[alias]
+    co = checkout
+    ci = commit
+    st = status
+    br = branch
+    hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+    type = cat-file -t
+    dump = cat-file -p
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+
+[credential]
+    helper = cache --timeout=3600
+
+[color]
+    ui = true
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+[color "status"]
+    added = green
+    changed = red
+    untracked = cyan
+    
+[github]
+user = viktorleite
