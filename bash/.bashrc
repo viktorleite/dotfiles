@@ -17,4 +17,4 @@ case ":$PATH:" in
 esac
 # pnpm end
 
-export $HOME/.cargo/env"
+export PATH=$PATH:$HOME/.cargo/bin
