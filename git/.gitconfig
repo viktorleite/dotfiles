@@ -1,7 +1,6 @@
 [user]
     name = Viktor Leite
-    email = vitorlesantos@outlook.com
-    # signingkey = 
+    email = viktorleite.s@gmail.com
 
 [core]
     editor = nano
@@ -12,13 +11,20 @@
     ci = commit
     st = status
     br = branch
-    hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
     type = cat-file -t
     dump = cat-file -p
-    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    lg = log --graph --pretty=format:\"%C(yellow)%h%Creset | %C(green)<%an%>Creset | %C(blue)%ad%Creset | %s\" --date=relative --abbrev-commit
+    checkout-merge = "!f() { git checkout $1 && git merge $2; git status; }; f"
 
 [credential]
     helper = cache --timeout=3600
+
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
 
 [color]
     ui = true
