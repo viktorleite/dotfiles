@@ -1,0 +1,47 @@
+{
+	// Exibir trecho de codigos no navegador para visualizar melhor
+	"<pre> <code>": {
+		"prefix": "precode",
+		"body": [
+			"echo \"<pre><code class=\\\"language-json\\\"><b>\"; ",
+			" ",
+			"echo \"</code></pre>\";"
+		],
+		"description": "estrutura para exibir codigo formatado."
+	},
+	//
+	// "Titulo": {
+	// 	"prefix": "",
+	// 	"body": [
+	// ""
+	// 	],
+	// 	"description": ""
+	// }
+	//
+	"PHP Class": {
+		"prefix": "vphp",
+		"body": [
+            "<?php declare(strict_types=1);",
+            "/**",
+            " * ${1:ClassName} - ${2:descrição}",
+            " * PHP Version 8.3.",
+            " * @author ${3:Viktor Leite} <${4:viktorleite.s@gmail.com}>",
+            " * @package ${5:com.viktorleite.example}",
+            " */",
+            "",
+            "class ${1:ClassName} {",
+            "    public function __construct() {",
+            "        //",
+            "    }",
+            "",
+            "    public function __destruct() {",
+            "        //",
+            "    }",
+            "}"
+        ],
+		"description": "Cria uma estrutura de classe php com __construct e __desctruct"
+	},
+	//
+	
+	
+}
