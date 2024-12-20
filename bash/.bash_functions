@@ -6,3 +6,7 @@ function phpserver() {
 	sleep 1 && open "http://${ip}:${port}/" &
 	php -S "${ip}:${port}";
 }
+# function diminuebrilho() {
+function diminuirbrilho() {
+  xrandr --output eDP-1 --brightness 0.3
+}
