@@ -22,9 +22,11 @@ set ignorecase
 set smartcase
 set wildmenu
 
-nnoremap <C-s> :w<CR>
+nnoremap <C-s> :w<CR>i
+inoremap <C-s> <Esc>:w<CR>i
 nnoremap <C-b> :NERDTreeToggle<CR>
-
+nnoremap <C-f> /
+nnoremap <C-w> :q<CR>
 " Instalar o Vim-Plug:
 " Neovim:
 " curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
