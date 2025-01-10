@@ -12,6 +12,6 @@ function diminuirbrilho() {
 }
 # function para setar o teclado abnt2 pt-br
 function kbabnt2br() {
-  echo -ne "[*] Configurando teclado para Pt-BR ABNT2
+  echo -ne "[*] Configurando teclado para Pt-BR ABNT2"
   setxkbmap -model abnt2 -layout br -variant abnt2
 }
