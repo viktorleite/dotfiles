@@ -15,7 +15,7 @@
     dump = cat-file -p
     lg = log --graph --pretty=format:\"%C(yellow)%h%Creset | %C(green)<%an>%Creset | %C(blue)%ad%Creset | %s\" --date=relative --abbrev-commit
     checkout-merge = "!f() { git checkout $1 && git merge $2; git status; }; f"
-    vai = '!sh -c "git pull && git push "'
+    vai = "!f() { git pull && git push; }; f"
 
 [credential]
     helper = cache --timeout=3600
