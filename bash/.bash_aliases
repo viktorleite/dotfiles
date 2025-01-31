@@ -24,7 +24,7 @@ alias ll='ls -alF ${colorflag}'
 alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"
 
 # Lista somente Diretorios
-alias ld="ls -d1 */"
+#alias ld="ls -d1 */"
 
 
 # Get week number
