@@ -10,10 +10,8 @@ fi
 
 # Configuração de cores para o comando grep
 export GREP_OPTIONS='--color=auto'
-
 # Configurações de cores para o terminal
 export CLICOLOR=1
-
 
 # Alias úteis
 alias ls='ls ${colorflag}'
@@ -22,21 +20,18 @@ alias l='ls -CF ${colorflag}'
 alias ll='ls -alF ${colorflag}'
 # List only directories
 alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"
-
 # Lista somente Diretorios
-#alias ld="ls -d1 */"
-
-
+# Esta confundindo com o linkador ld
+# alias ld="ls -d1 */"
+alias ldir="ls -d1 */"
 # Get week number
 alias week='date +%V'
-
 alias dir='dir --color=auto'
 alias vdir='vdir --color=auto'
 alias grep='grep --color=always'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias cls='clear'
-
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
@@ -44,6 +39,9 @@ alias .....="cd ../../../.."
 alias ~="cd ~" 
 alias -- -="cd -"
 
+if [ "$(nano --version | head -n1 | cut -d" " -f5 )" == "8.2" ]; then
+  alias nano="nano -EFPZbdilmq_ -T2"
+fi
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
