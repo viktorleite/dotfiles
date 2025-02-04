@@ -40,7 +40,8 @@ alias ~="cd ~"
 alias -- -="cd -"
 
 if [ "$(nano --version | head -n1 | cut -d" " -f5 )" == "8.2" ]; then
-  alias nano="nano -EFPZbdilmq_ -T2"
+  alias nano="nano --tabstospaces --multibuffer --positionlog --zap \
+  --breaklonglines --autoindent --linenumbers --mouse --indicator --minibar -T2"
 fi
 
 # IP addresses
