@@ -45,3 +45,5 @@
     
 [github]
 user = viktorleite
+[init]
+	defaultBranch = main
