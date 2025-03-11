@@ -27,10 +27,10 @@ vim.opt.foldenable = true
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 
 
-vim.keymap.set("n", "<Ch>", "<Cw><Ch>", { desc = "Mover o foco para a janela esquerda" })
-vim.keymap.set("n", "<Cl>", "<Cw><Cl>", { desc = "Mover o foco para a janela direita" })
-vim.keymap.set("n", "<Cj>", "<Cw><Cj>", { desc = "Mover o foco para a janela inferior" })
-vim.keymap.set("n", "<Ck>", "<Cw><Ck>", { desc = "Mover o foco para a janela superior" })
+vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Mover o foco para a janela esquerda" })
+vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Mover o foco para a janela direita" })
+vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Mover o foco para a janela inferior" })
+vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Mover o foco para a janela superior" })
 
 vim.api.nvim_create_autocmd("TextYankPost", {
   desc = "Destacar ao extrair (copiar) text.",
