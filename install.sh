@@ -19,29 +19,33 @@ readonly DATA_DMHMA=$(date +"%d%m%H%M%Y")
 #else
 #	echo "debug 2 [$DATA_DMHMA]"
 #fi
- 
+
+# [x] nvim
+# [x] plank
+# [ ] kitty 	-> Ainda não tenho um tema
+# [] openbox
+# [] bash
+# [] dunst
+# [] git
+# [] polybar
+# [] rofi
+# [] tint2
+# [] vim
+# [] vscode
+
 # Configuração do plank dock {{
 # Tema:
 # 	$HOME/.local/share/plank/themes/ViktorLeite/dock.theme
 # 	ln -s $SRC/plank/themes/ryuzue/dock.theme $HOME/.local/share/plank/themes/ryuzue/dock.theme
-# Launchers
+# Launchers:
 # 	$HOME/.config/plank/dock1/launchers/
 # 	ln -s $SRC/plank/dock1/launchers/* $HOME/.config/plank/dock1/launchers/
 # }}
 
 # Configuração do nvim {{
-# mv $HOME/.config/nvim $HOME/.config/nvim.backup.$(date +"%d%m%H%M%Y")
-# ln -s $SRC/nvim $HOME/.config/nvim
-#
+# 	mv $HOME/.config/nvim $HOME/.config/nvim.backup.$(date +"%d%m%H%M%Y")
+# 	ln -s $SRC/nvim $HOME/.config/nvim
 # }}
-
-#dunst/
-#git/
-#kitty/
-#polybar/
-#rofi/
-#vim/
-#vscode/
 
 diretorios=(
 	"$HOME/.config/tint2"
