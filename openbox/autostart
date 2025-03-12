@@ -1,0 +1,10 @@
+## Copyright (C) 2025 Viktor Leite <vitkorleite.s@gmail.com>
+tint2 &
+picom -b &
+## feh --bg-scale ~/Imagens/1718089533_sequoiadark.jpg &
+nitrogen --restore &
+nm-applet &
+dunst &
+volumeicon &
+cbatticon &
+plank &

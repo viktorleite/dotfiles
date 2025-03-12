@@ -1,0 +1,21 @@
+  <keyboard>
+    <chainQuitKey>C-g</chainQuitKey>
+    <!-- Lança o rofi -->
+    <keybind key="W-e">
+      <action name="Execute">
+        <command>rofi -show drun</command>
+      </action>
+    </keybind>
+    <!-- 
+    <keybind key="">
+      <action name="">
+        <command></command>
+      </action>
+    </keybind>
+    -->
+    <keybind key="C-A-l">
+      <action name="Execute">
+        <command>i3lock</command>
+      </action>
+    </keybind>
+  </keyboard>
