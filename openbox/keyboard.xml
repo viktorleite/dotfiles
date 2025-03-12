@@ -13,9 +13,24 @@
       </action>
     </keybind>
     -->
+    <!-- Bloqueia tela -->
     <keybind key="C-A-l">
       <action name="Execute">
         <command>i3lock</command>
       </action>
     </keybind>
+    <!-- Mostra o menu cliente-->
+    <keybind key="Alt_L">
+      <action name="ShowMenu">
+        <menu>client-menu</menu>
+      </action>
+    </keybind>
+    <!-- Reconfigura o OpenBox -->
+    <keybind key="C-S-R">
+      <action name="Execute">
+        <command>dunstify -u low -h string:x-dunst-stack-tag:obaction "Configuração Carregada!"</command>
+      </action>
+      <action name="Reconfigure" />
+    </keybind>
+
   </keyboard>
