@@ -1,0 +1,124 @@
+<mouse>
+  <dragThreshold>1</dragThreshold>
+  <doubleClickTime>500</doubleClickTime>
+  <screenEdgeWarpTime>400</screenEdgeWarpTime> -->
+  <screenEdgeWarpMouse>false</screenEdgeWarpMouse>
+  <!-- <context name="Frame">
+    <mousebind action="Press" button="Left">
+    <action name="Focus"/>
+    <action name="Raise"/>
+    </mousebind>
+  </context> -->
+  <context name="Titlebar">
+
+    <mousebind action="Drag" button="Left">
+      <action name="Move" />
+    </mousebind>
+
+    <mousebind action="Press" button="Left">
+      <action name="Focus" />
+      <action name="Raise" />
+    </mousebind>
+
+  </context>
+
+  <context name="Iconify">
+    <mousebind button="Left" action="Press">
+      <action name="Focus"/>
+      <action name="Raise"/>
+    </mousebind>
+    <mousebind button="Left" action="Click">
+      <action name="Iconify"/>
+    </mousebind>
+  </context>
+
+  <context name="Maximize">
+    <mousebind button="Left" action="Press">
+      <action name="Focus"/>
+      <action name="Raise"/>
+      <action name="Unshade"/>
+    </mousebind>
+     <mousebind button="Left" action="Click">
+        <action name="ToggleMaximize"/>
+      </mousebind>
+   </context>
+    <context name="Close">
+      <mousebind button="Left" action="Press">
+        <action name="Focus"/>
+        <action name="Raise"/>
+        <action name="Unshade"/>
+      </mousebind>
+      <mousebind button="Left" action="Click">
+        <action name="Close"/>
+      </mousebind>
+    </context>
+    <context name="Titlebar Top Right Bottom Left TLCorner TRCorner BRCorner BLCorner">
+      <mousebind action="Press" button="Left">
+        <action name="Focus" />
+        <action name="Raise" />
+        <action name="Unshade" />
+      </mousebind>
+    </context>
+
+    <!-- Resize Top, Bottom, Left, Right -->
+    <context name="Top">
+      <mousebind action="Press" button="Left">
+        <action name="Focus"/>
+        <action name="Raise"/>
+        <action name="Unshade"/>
+      </mousebind>
+      <mousebind action="Drag" button="Left">
+        <action name="Resize">
+          <edge>top</edge>
+        </action>
+      </mousebind>
+    </context>
+    <context name="Left">
+      <mousebind action="Press" button="Left">
+        <action name="Focus"/>
+        <action name="Raise"/>
+      </mousebind>
+      <mousebind action="Drag" button="Left">
+        <action name="Resize">
+          <edge>left</edge>
+        </action>
+      </mousebind>
+    </context>
+    <context name="Right">
+      <mousebind action="Press" button="Left">
+        <action name="Focus"/>
+        <action name="Raise"/>
+      </mousebind>
+      <mousebind action="Drag" button="Left">
+        <action name="Resize">
+          <edge>right</edge>
+        </action>
+      </mousebind>
+    </context>
+    <context name="Bottom">
+      <mousebind action="Press" button="Left">
+        <action name="Focus"/>
+        <action name="Raise"/>
+      </mousebind>
+      <mousebind action="Drag" button="Left">
+        <action name="Resize">
+          <edge>bottom</edge>
+        </action>
+      </mousebind>
+    </context>
+    <context name="TLCorner TRCorner BRCorner BLCorner">
+      <mousebind action="Press" button="Left">
+        <action name="Focus" />
+        <action name="Raise" />
+      </mousebind>
+      <mousebind button="Left" action="Drag">
+        <action name="Resize"/>
+      </mousebind>
+    </context> -->
+    <context name="Client">
+      <mousebind action="Press" button="Left">
+        <action name="Focus" />
+        <action name="Raise" />
+      </mousebind>
+    </context>
+</mouse>
