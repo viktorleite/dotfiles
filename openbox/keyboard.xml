@@ -1,18 +1,18 @@
-  <keyboard>
-    <chainQuitKey>C-g</chainQuitKey>
-    <!-- Lança o rofi -->
-    <keybind key="W-e">
-      <action name="Execute">
-        <command>rofi -show drun</command>
-      </action>
-    </keybind>
-    <!-- 
+<keyboard>
+  <chainQuitKey>C-g</chainQuitKey>
+  <!-- Lança o rofi -->
+  <keybind key="W-e">
+    <action name="Execute">
+      <command>rofi -show drun</command>
+    </action>
+  </keybind>
+  <!-- 
     <keybind key="">
-      <action name="">
-        <command></command>
-      </action>
+    <action name="">
+    <command></command>
+    </action>
     </keybind>
-    -->
+  -->
     <!-- Bloqueia tela -->
     <keybind key="C-A-l">
       <action name="Execute">
@@ -20,7 +20,7 @@
       </action>
     </keybind>
     <!-- Mostra o menu cliente-->
-    <keybind key="Alt_L">
+    <keybind key="A-space">
       <action name="ShowMenu">
         <menu>client-menu</menu>
       </action>
@@ -32,5 +32,33 @@
       </action>
       <action name="Reconfigure" />
     </keybind>
-
+    <keybind key="A-Tab">
+      <action name="NextWindow">
+        <finalaction>
+          <action name="Focus" />
+          <action name="Raise" />
+          <action name="Unshade"/>
+        </finalaction>
+      </action>
+    </keybind>
+    <keybind key="W-S-Right">
+      <action name="DirectionalCycleWindows">
+        <direction>right</direction>
+      </action>
+    </keybind>
+    <keybind key="W-S-Left">
+      <action name="DirectionalCycleWindows">
+        <direction>left</direction>
+      </action>
+    </keybind>
+    <keybind key="W-S-Up">
+      <action name="DirectionalCycleWindows">
+        <direction>up</direction>
+      </action>
+    </keybind>
+    <keybind key="W-S-Down">
+      <action name="DirectionalCycleWindows">
+        <direction>down</direction>
+      </action>
+    </keybind>
   </keyboard>
