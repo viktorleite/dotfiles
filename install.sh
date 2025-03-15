@@ -4,42 +4,80 @@
 readonly REAL_PATH="$( realpath ${BASH_SOURCE[0]} )"
 readonly WORKSPACE_DIR="$HOME/workspace/"
 readonly DOTFILES_DIR="$( dirname ${REAL_PATH} )"
-readonly DATA_DMHMA=$(date +"%d%m%H%M%Y")
+readonly DATA_DMHMA=$(date +"%d%m%H%M%S%Y")
 readonly ENV=develop
 
-if [[ $ENV != "develop" ]]; then
-	exit;
+HOME_CONFIG_DIR="$HOME/.config"
+
+if [[ $ENV == 'develop' ]]; 
+then
+	MV_FLAGS="-v"
+	LN_FLAGS="-sfv"
 else
-	HOME_CONFIG_DIR="$HOME/.config"
-
-	diretorios=(
-		"$HOME/.config/tint2"
-		"$HOME/.config/polybar"
-		"$HOME/.config/kitty"
-		"$HOME/.config/openbox"
-		"$HOME/.config/nvim"
-		#"$HOME/.config/plank"
-		"$HOME/.local/share/plank"
-		"$HOME/.config/plank"
-		"$HOME/.config/bash"
-	)
-
-
-	for dir in "${diretorios[@]}";
-	do
-		alvo="$DOTFILES_DIR/$(basename "$dir")"
-		link="$dir"
-
-		# verifica se o diretorio existe
-		if [[ -d "$dir" ]]; then
-		# Se existir vamos mover de $HOME/.../Diretorio para $HOME/.../Diretorio.backup.110314092025
-			# E a vamos criar criar os symlinks
-			echo "ln -sf $alvo $link"
-			#echo "Diretorio $dir movido para $dir.backup.$DATA_DMHMA"
-		else 
-			#echo -ne "\033[41m\033[37mERRO:\033[0m\033[31m diretorio \033[1m$dir\033[0m\033[31m não encontrado \033[0m \n"
-			echo "ln -sf $alvo $link"
-		fi
-	done
-
+	MV_FLAGS=""
+	LN_FLAGS="-sf"
 fi
+
+if [[ ! -d $WORKSPACE_DIR ]]; then
+	echo
+	echo "	[*] Criando workspace..."
+	echo 
+	mkdir -pv $WORKSPACE_DIR
+fi
+
+diretorios=(
+	"$HOME/.config/tint2"
+	"$HOME/.config/polybar"
+	"$HOME/.config/kitty"
+	"$HOME/.config/openbox"
+	"$HOME/.config/nvim"
+	"$HOME/.config/plank"
+	"$HOME/.local/share/plank"
+	"$HOME/.config/plank"
+	"$HOME/.config/bash"
+)
+
+
+for dir in "${diretorios[@]}";
+do
+	alvo="$DOTFILES_DIR/$(basename "$dir")"
+	link="$dir"
+
+	# verifica se o diretorio existe
+	if [[ -d "$dir" ]]; then
+		echo
+		echo "	[*] Criando backup das configurçoes anteriores..."
+		echo
+		backups_dirs=$dir.backup.$DATA_DMHMA
+		mv $MV_FLAGS $dir $backups_dirs
+		echo "$backups_dirs" >> $HOME/.config/diretorios_backups
+		echo
+	fi
+	echo
+	echo "	[*] Criando symbolic..."
+	echo
+	ln $LN_FLAGS $alvo $HOME_CONFIG_DIR
+	echo
+done
+echo
+echo "	[*] Configurando VSCode..."
+echo
+vscode_snippets_dir="${HOME_CONFIG_DIR}/Code/User/snippets"
+
+if [[ -d $vscode_snippets_dir ]]; 
+then
+	echo
+	echo "		[*] Criando backup das configuraçoes anteriores..."
+	echo
+	mv $MV_FLAGS $vscode_snippets_dir $vscode_snippets_dir.backup.$DATA_DMHMA
+	echo
+fi
+echo
+echo "		[*] Criando symbolic..."
+echo
+ln $LN_FLAGS $DOTFILES_DIR/vscode/snippets/ $HOME_CONFIG_DIR/Code/User/
+echo
+
+
+
+
