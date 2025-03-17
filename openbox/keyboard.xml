@@ -41,6 +41,15 @@
         </finalaction>
       </action>
     </keybind>
+    <keybind key="A-S-Tab">
+      <action name="PreviousWindow">
+        <finalaction>
+          <action name="Focus" />
+          <action name="Raise" />
+          <action name="Unshade" />
+        </finalaction>
+      </action>
+    </keybind>
     <keybind key="W-S-Right">
       <action name="DirectionalCycleWindows">
         <direction>right</direction>
