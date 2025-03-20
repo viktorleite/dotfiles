@@ -1,5 +1,5 @@
 ## Copyright (C) 2025 Viktor Leite <vitkorleite.s@gmail.com>
-tint2 &
+#tint2 &
 polybar &
 picom -b --config ~/.config/picom/picom.conf &
 nitrogen --restore &
