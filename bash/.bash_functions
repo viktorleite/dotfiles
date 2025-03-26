@@ -40,6 +40,13 @@ function kbabnt2br() {
   setxkbmap -model abnt2 -layout br -variant abnt2
 }
 
-err() {
+function err() {
   echo "[$(date +'%Y-%m-%dT%H:%M:%S%z')]: $*" >&2
+}
+
+# adiciona a chave pem 
+function sshAddPem() {
+  local pem=$2
+  eval $(ssh-agent -s)  
+  ssh-add $pem
 }
