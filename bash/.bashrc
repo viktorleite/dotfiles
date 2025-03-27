@@ -1,8 +1,8 @@
 #!/bin/bash
 # 
-source .bash_aliases
-source .bash_prompt
-source .bash_functions
-source .bash_exports
+config_path="$HOME/.config/bash"
+source $config_path/.bash_aliases
+source $config_path/.bash_prompt
+source $config_path/.bash_functions
+source $config_path/.bash_exports
 
-export PATH=/usr/local/nodejs/bin:$PATH

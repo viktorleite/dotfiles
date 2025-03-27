@@ -31,3 +31,4 @@ export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:$HOME"/.flutter/bin"
 
+export PATH=/usr/local/nodejs/bin:$PATH
