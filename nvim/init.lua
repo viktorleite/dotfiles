@@ -13,7 +13,7 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.signcolumn = "yes"
 vim.opt.updatetime = 250
-vim.opt.timeoutlen = 300
+vim.opt.timeoutlen = 500
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 vim.opt.list = true
@@ -29,17 +29,6 @@ vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.schedule(function()
 	vim.opt.clipboard = "unnamedplus"
 end)
-
-vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
-vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Abri lista de diagnostico [Q]uickfix" })
--- Se <C-\\><C-n> nao funcionar
--- tentar <C-\><Cn>
-vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Sair do modo terminal" })
-
-vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Mover o foco para a janela esquerda" })
-vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Mover o foco para a janela direita" })
-vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Mover o foco para a janela inferior" })
-vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Mover o foco para a janela superior" })
 
 vim.api.nvim_create_autocmd("TextYankPost", {
 	desc = "Destacar ao extrair (copiar) texto.",
@@ -287,3 +276,7 @@ require("lazy").setup({
 		},
 	},
 })
+
+vim.schedule(function()
+	require("mappings")
+end)
