@@ -46,7 +46,7 @@ function err() {
 
 # adiciona a chave pem 
 function sshAddPem() {
-  local pem=$2
+  local pem=$1
   eval $(ssh-agent -s)  
   ssh-add $pem
 }
