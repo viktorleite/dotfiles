@@ -82,8 +82,9 @@ require("lazy").setup({
 	require("plugins.debug"),
 	require("plugins.autopairs"),
 	require("plugins.telescope"),
-	require("plugins.autoformat"),
+	-- require("plugins.autoformat"),
 	require("plugins.gitblame"),
+	require("plugins.php.php-cs-fixer"),
 	-- [[ Plugins LSP ]] --
 	{
 		"folke/lazydev.nvim",
@@ -158,7 +159,7 @@ require("lazy").setup({
 						)
 					then
 						local highlight_augroup =
-							vim.api.nvim_create_augroup("kickstart-lsp-highlight", { clear = false })
+						vim.api.nvim_create_augroup("kickstart-lsp-highlight", { clear = false })
 						vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
 							buffer = event.buf,
 							group = highlight_augroup,
@@ -257,25 +258,39 @@ require("lazy").setup({
 		dependencies = { "nvim-lua/plenary.nvim" },
 		opts = { signs = false },
 	},
-}, {
-	ui = {
-		icons = vim.g.have_nerd_font and {} or {
-			cmd = "⌘",
-			config = "🛠",
-			event = "📅",
-			ft = "📂",
-			init = "⚙",
-			keys = "🗝",
-			plugin = "🔌",
-			runtime = "💻",
-			require = "🌙",
-			source = "📄",
-			start = "🚀",
-			task = "📌",
-			lazy = "💤 ",
-		},
+},
+	{
+		'nvim-lualine/lualine.nvim',
+		dependencies = { 'nvim-tree/nvim-web-devicons', lazy = true },
+		config = function()
+			require('lualine').setup {
+				options = {
+					theme = 'gruvbox', -- ou 'auto' ou outro tema que curtir
+					section_separators = '',
+					component_separators = ''
+				}
+			}
+		end
 	},
-})
+	{
+		ui = {
+			icons = vim.g.have_nerd_font and {} or {
+				cmd = "⌘",
+				config = "🛠",
+				event = "📅",
+				ft = "📂",
+				init = "⚙",
+				keys = "🗝",
+				plugin = "🔌",
+				runtime = "💻",
+				require = "🌙",
+				source = "📄",
+				start = "🚀",
+				task = "📌",
+				lazy = "💤 ",
+			},
+		},
+	})
 
 vim.schedule(function()
 	require("mappings")
