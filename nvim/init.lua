@@ -85,6 +85,7 @@ require("lazy").setup({
 	-- require("plugins.autoformat"),
 	require("plugins.gitblame"),
 	require("plugins.php.php-cs-fixer"),
+	require("plugins.diffview"),
 	-- [[ Plugins LSP ]] --
 	{
 		"folke/lazydev.nvim",
@@ -102,7 +103,7 @@ require("lazy").setup({
 		"neovim/nvim-lspconfig",
 		dependencies = {
 			{ "williamboman/mason.nvim", opts = {} },
-			"williamboman/mason-lspconfig.nvim",
+			{ "williamboman/mason-lspconfig.nvim", version = "1.29.0" },
 			"WhoIsSethDaniel/mason-tool-installer.nvim",
 
 			{ "j-hui/fidget.nvim", opts = {} },
@@ -239,8 +240,9 @@ require("lazy").setup({
 			})
 			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
-			require("mason-lspconfig").setup({
-				ensure_installed = {},
+			
+			 require("mason-lspconfig").setup({
+				ensure_installed = {'lua_ls', 'pyright'},
 				automatic_installation = false,
 				handlers = {
 					function(server_name)
@@ -249,7 +251,7 @@ require("lazy").setup({
 						require("lspconfig")[server_name].setup(server)
 					end,
 				},
-			})
+			 })
 		end,
 	},
 	{

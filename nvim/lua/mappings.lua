@@ -8,8 +8,10 @@ map("n", "<leader>ma", "<cmd>Telescope marks<CR>", { desc = "telescope find mark
 map("n", "<leader>fo", "<cmd>Telescope oldfiles<CR>", { desc = "telescope find oldfiles" })
 map("n", "<leader>fz", "<cmd>Telescope current_buffer_fuzzy_find<CR>", { desc = "telescope find in current buffer" })
 map("n", "<leader>cm", "<cmd>Telescope git_commits<CR>", { desc = "telescope git commits" })
+-- Corrigir
 map("n", "<leader>gt", "<cmd>Telescope git_status<CR>", { desc = "telescope git status" })
 map("n", "<leader>pt", "<cmd>Telescope terms<CR>", { desc = "telescope pick hidden term" })
+--
 map("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "telescope find files" })
 
 local builtin = require("telescope.builtin")
@@ -45,7 +47,8 @@ end, { desc = "[S]earch [N]eovim files" })
 -- Geral
 map("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
-map("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Abri lista de diagnostico [Q]uickfix" })
+-- map("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Abri lista de diagnostico [Q]uickfix" })
+
 -- Se <C-\\><C-n> nao funcionar
 -- tentar <C-\><Cn>
 map("t", "tt", [[<C-\><C-n>]], { desc = "Sair do modo terminal" })
