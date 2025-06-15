@@ -43,6 +43,17 @@
 		"description": "Cria uma estrutura de classe php com __construct e __desctruct"
 	},
 	//
+	 "Depuração com tipos das variaveis": {
+	 	"prefix": "vard",
+	 	"body": [
+	 		"echo \"<pre> Arquivo: \" . __FILE__ . \" LINHA: \". __LINE__ . \"<br>\"; ",
+			"var_dump(\\$arr);",
+			"exit();",
+			"echo \"</pre>\"; "
+	 	],
+	 	"description": ""
+	}
+	//
 	
 	
 }
