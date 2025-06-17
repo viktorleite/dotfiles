@@ -102,13 +102,19 @@ require("lazy").setup({
 	{
 		"neovim/nvim-lspconfig",
 		dependencies = {
-			{ "williamboman/mason.nvim", opts = {} },
-			{ "williamboman/mason-lspconfig.nvim", version = "1.29.0" },
-			"WhoIsSethDaniel/mason-tool-installer.nvim",
 
-			{ "j-hui/fidget.nvim", opts = {} },
+			--{ "williamboman/mason.nvim", opts = {} },
+			--{ "williamboman/mason-lspconfig.nvim" },
+			--"WhoIsSethDaniel/mason-tool-installer.nvim",
+			--{ "j-hui/fidget.nvim", opts = {} },
+			--
+			{ 'mason-org/mason.nvim', opts = {}},
+			'mason-org/mason-lspconfig.nvim',
+			'WhoIsSethDaniel/mason-tool-installer.nvim',
+			{ 'j-hui/fidget.nvim', opts = {}},
 
-			"hrsh7th/cmp-nvim-lsp",
+			-- "hrsh7th/cmp-nvim-lsp",
+			'saghen/blink.cmp'
 		},
 		config = function()
 			--
@@ -121,25 +127,17 @@ require("lazy").setup({
 					end
 
 					map("gd", require("telescope.builtin").lsp_definitions, "[G]oto [D]efinition")
-
 					map("gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
-
 					map("gI", require("telescope.builtin").lsp_implementations, "[G]oto [I]mplementation")
-
 					map("<leader>D", require("telescope.builtin").lsp_type_definitions, "Type [D]efinition")
-
 					map("<leader>ds", require("telescope.builtin").lsp_document_symbols, "[D]ocument [S]ymbols")
-
 					map(
 						"<leader>ws",
 						require("telescope.builtin").lsp_dynamic_workspace_symbols,
 						"[W]orkspace [S]ymbols"
 					)
-
 					map("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
-
 					map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction", { "n", "x" })
-
 					map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
 
 					local function client_supports_method(client, method, bufnr)
@@ -219,8 +217,9 @@ require("lazy").setup({
 					end,
 				},
 			})
-			local capabilities = vim.lsp.protocol.make_client_capabilities()
-			capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
+			-- local capabilities = vim.lsp.protocol.make_client_capabilities()
+			-- capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
+			local capabilities = require('blink.cmp').get_lsp_capabilities()
 
 			local servers = {
 				lua_ls = {
@@ -234,6 +233,7 @@ require("lazy").setup({
 				},
 			}
 
+			--[[ 
 			local ensure_installed = vim.tbl_keys(servers or {})
 			vim.list_extend(ensure_installed, {
 				"stylua",
@@ -242,7 +242,8 @@ require("lazy").setup({
 
 			
 			 require("mason-lspconfig").setup({
-				ensure_installed = {'lua_ls', 'pyright'},
+				-- ensure_installed = {'lua_ls', 'pyright'},
+				ensure_installed = {},
 				automatic_installation = false,
 				handlers = {
 					function(server_name)
@@ -252,6 +253,7 @@ require("lazy").setup({
 					end,
 				},
 			 })
+			]]--
 		end,
 	},
 	{
