@@ -86,6 +86,7 @@ require("lazy").setup({
 	require("plugins.gitblame"),
 	require("plugins.php.php-cs-fixer"),
 	require("plugins.diffview"),
+	require("plugins.autocompletion"),
 	-- [[ Plugins LSP ]] --
 	{
 		"folke/lazydev.nvim",
@@ -102,7 +103,6 @@ require("lazy").setup({
 	{
 		"neovim/nvim-lspconfig",
 		dependencies = {
-
 			--{ "williamboman/mason.nvim", opts = {} },
 			--{ "williamboman/mason-lspconfig.nvim" },
 			--"WhoIsSethDaniel/mason-tool-installer.nvim",
