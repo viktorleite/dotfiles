@@ -61,3 +61,8 @@ map("n", "<C-h>", "<C-w><C-h>", { desc = "Mover o foco para a janela esquerda" }
 map("n", "<C-l>", "<C-w><C-l>", { desc = "Mover o foco para a janela direita" })
 map("n", "<C-j>", "<C-w><C-j>", { desc = "Mover o foco para a janela inferior" })
 map("n", "<C-k>", "<C-w><C-k>", { desc = "Mover o foco para a janela superior" })
+
+-- Simula Shift+End
+map("n", "<S-End>", "v$", { noremap = true, silent = true})
+map("i", "<S-End>", "<Esc>v$a", { noremap = true, silent = true})
+map("v", "<S-End>", "$", { noremap = true, silent = true})
