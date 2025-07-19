@@ -3,7 +3,7 @@
     email = viktorleite.s@gmail.com
 
 [core]
-    editor = nano
+    editor = nvim
     autocrlf = input
 
 [alias]

@@ -25,6 +25,30 @@ if [[ ! -d $WORKSPACE_DIR ]]; then
 	mkdir -pv $WORKSPACE_DIR
 fi
 
+echo
+echo "		[*] Configurando GIT"
+echo
+
+arquivos_git=(
+	".gitconfig"
+	".git-completion.bash"
+	".git-prompt.sh"
+)
+
+for arquivo in "${arquivos_git[@]}";
+do
+	alvo="$DOTFILES_DIR/git/${arquivo}"
+	echo
+	echo "		[*] Adicionando ${arquivo}..."
+	echo
+	
+	if [[ -f "$HOME/$arquivo" ]]; then
+		mv "$HOME/$arquivo" "$HOME/$arquivo.backup.$DATA_DMHMA"
+	fi
+
+	ln $LN_FLAGS "$alvo" "$HOME/${arquivo}"
+done
+
 diretorios=(
 	"$HOME/.config/tint2"
 	"$HOME/.config/polybar"
@@ -36,7 +60,6 @@ diretorios=(
 	"$HOME/.config/plank"
 	"$HOME/.config/bash"
 )
-
 
 for dir in "${diretorios[@]}";
 do
