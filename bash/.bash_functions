@@ -214,3 +214,9 @@ function gitCompare()
     printf "\n"
     
 }
+
+function compress() {
+  tar -czf "${1%/}.tar.gz" "${1%/}";
+}
+
+
