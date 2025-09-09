@@ -15,7 +15,8 @@ export CLICOLOR=1
 
 # Alias úteis
 alias ls='ls ${colorflag}'
-alias la='ls -A ${colorflag}'
+alias lsA='ls -A ${colorflag}'
+alias lsa='ls -a'
 alias l='ls -CF ${colorflag}'
 alias ll='ls -alF ${colorflag}'
 # List only directories
@@ -67,5 +68,7 @@ fi
 alias path='echo -e ${PATH//:/\\n}'
 
 #alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v extension-process | tr -s ' ' | cut -d ' ' -f2 | xargs kill"
+
+# @extern eza
 
 

@@ -8,28 +8,28 @@ export LC_ALL=pt_BR.UTF-8
 export LANGUAGE=pt_BR
 
 # RUBY
-export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
+#export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
 # DOTNET
-export DOTNET_ROOT=$HOME/.dotnet
-export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools
+#export DOTNET_ROOT=$HOME/.dotnet
+#export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools
 # SNAP
 export PATH=$PATH:"/snap/bin"
 # PYENV
-export PATH=$PATH:$HOME"/.viktor_pyenv/bin"
+#export PATH=$PATH:$HOME"/.viktor_pyenv/bin"
 # pnpm
-export PNPM_HOME=$HOME"/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
+#export PNPM_HOME=$HOME"/.local/share/pnpm"
+#case ":$PATH:" in
+#  *":$PNPM_HOME:"*) ;;
+#  *) export PATH="$PNPM_HOME:$PATH" ;;
+#esac
 # pnpm end
 # Cargp
 export PATH=$PATH:$HOME/.cargo/bin
 # ANDROID 
-export ANDROID_HOME=$HOME/.Android/Sdk
-export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/platform-tools
-export PATH=$PATH:$HOME"/.flutter/bin"
+#export ANDROID_HOME=$HOME/.Android/Sdk
+#export PATH=$PATH:$ANDROID_HOME/emulator
+#export PATH=$PATH:$ANDROID_HOME/platform-tools
+#export PATH=$PATH:$HOME"/.flutter/bin"
 # NodeJS v20.11.1
 #export PATH=/usr/local/nodejs/bin:$PATH
 # Composer
